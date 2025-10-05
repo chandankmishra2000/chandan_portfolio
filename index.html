@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chandan Mishra | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* --- Global --- */
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: radial-gradient(
+          circle at top left,
+          #0f2027,
+          #203a43,
+          #2c5364
+        );
+        color: #f5f5f5;
+        line-height: 1.6;
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: 600;
+      }
+
+      /* --- Bubble Animation Background --- */
+      .bubbles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      .bubble {
+        position: absolute;
+        bottom: -100px;
+        background: rgba(0, 204, 255, 0.25);
+        border-radius: 50%;
+        animation: rise 10s infinite ease-in;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(0) scale(1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-120vh) scale(1.5);
+          opacity: 0;
+        }
+      }
+
+      /* --- Header --- */
+      header {
+        background: rgba(15, 20, 25, 0.95);
+        backdrop-filter: blur(6px);
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #00ccff;
+      }
+
+      nav {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: #f0f0f0;
+        text-decoration: none;
+        transition: 0.3s;
+        font-weight: 500;
+      }
+
+      nav a:hover {
+        color: #00ccff;
+      }
+
+      /* --- Hamburger Menu --- */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+      }
+
+      .hamburger div {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        transition: 0.3s;
+      }
+
+      @media (max-width: 768px) {
+        nav {
+          display: none;
+          flex-direction: column;
+          width: 100%;
+          text-align: center;
+          margin-top: 10px;
+        }
+        nav.active {
+          display: flex;
+        }
+        .hamburger {
+          display: flex;
+        }
+      }
+
+      /* --- Sections --- */
+      section {
+        animation: fadeIn 1s ease;
+        position: relative;
+        z-index: 1;
+      }
+
+      section img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* --- Project Cards --- */
+      .project-card {
+        background: #1b1f24;
+        border-radius: 10px;
+        width: 250px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 204, 255, 0.3);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
+
+      .project-card h3 {
+        color: #fff;
+        margin: 0;
+        padding: 15px;
+        font-size: 18px;
+      }
+
+      /* --- Modal --- */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        padding-top: 50px;
+      }
+
+      .modal-content {
+        background: #1e252b;
+        margin: auto;
+        padding: 25px;
+        border-radius: 10px;
+        max-width: 600px;
+        color: #ddd;
+        animation: fadeIn 0.5s;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+      }
+
+      .close {
+        color: #00ccff;
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* --- Responsive Adjustments --- */
+      @media (max-width: 768px) {
+        section div {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+
+      /* --- Buttons --- */
+      button,
+      a.button {
+        background: #00ccff;
+        color: #000;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        padding: 12px 25px;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+
+      button:hover,
+      a.button:hover {
+        background: #00a3cc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Bubble Background -->
+    <div class="bubbles" id="bubbles"></div>
+
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <h1>Chandan Mishra</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <nav id="navbar">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#internships">Work Experince</a>
+          <a href="#mern-projects">Full Stack Projects</a>
+          <a href="#data-projects">Data Analyst Projects</a>
+          <a href="#resumes">Resumes</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Home -->
+    <section id="home" style="padding: 100px 20px; text-align: center">
+      <img
+        src="./linkedin_profile_Photo.jpeg"
+        alt="Chandan Mishra"
+        style="
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          border: 3px solid #00ccff;
+          margin-bottom: 20px;
+        "
+      />
+      <h2 style="font-size: 36px; margin: 10px 0">Welcome to my Portfolio</h2>
+      <h3 style="font-size: 28px; margin-bottom: 20px; color: #00ccff">
+        Hi, I'm Chandan Mishra
+      </h3>
+      <p
+        style="
+          max-width: 700px;
+          margin: auto;
+          font-size: 18px;
+          margin-bottom: 30px;
+          color: #ddd;
+        "
+      >
+        A passionate Full Stack Developer & Data Analyst, creating interactive
+        web applications and deriving valuable insights from complex datasets
+        through visualization and analytics.
+      </p>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="padding: 60px 20px; text-align: center">
+      <h2 style="color: #00ccff">About Me</h2>
+      <p style="max-width: 700px; margin: auto; margin-top: 20px; color: #ccc">
+        I am a versatile professional skilled in web development and data
+        analytics. I specialize in building scalable, responsive web apps using
+        the MERN stack and turning raw data into business insights through
+        Python, SQL, and visualization tools.
+      </p>
+      <p style="max-width: 700px; margin: auto; margin-top: 20px; color: #ccc">
+        <strong>Tech Stack:</strong> React, Node.js, Express.js, MongoDB,
+        JavaScript, HTML, CSS <br />
+        <strong>Data Tools:</strong> Python, Pandas, NumPy, Seaborn, Matplotlib,
+        SQL, Excel, Tableau, Power BI
+      </p>
+    </section>
+
+    <!-- Internships -->
+    <section id="internships" style="padding: 60px 20px; text-align: center">
+      <h2 style="color: #00ccff">Work Experince</h2>
+      <div style="max-width: 800px; margin: auto; margin-top: 20px">
+        <div
+          style="
+            background: #1e252b;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+          "
+        >
+          <h3 style="color: #fff">Associate Data Analyst</h3>
+          <p style="color: #ccc">
+            I worked as a freelance Data Analyst, where I performed data
+            cleaning, transformation, and visualization using Power BI, Tableau,
+            and Python libraries. I extracted actionable business insights
+            through data analysis leveraging Excel, SQL, and Pandas to support
+            informed decision-making and business growth.
+          </p>
+        </div>
+        <div
+          style="
+            background: #1e252b;
+            padding: 20px;
+            margin: 15px;
+            border-radius: 10px;
+          "
+        >
+          <h3 style="color: #fff">Associate Full Stack</h3>
+          <p style="color: #ccc">
+            Worked as a Freelance Full Stack Developer, creating dynamic and
+            responsive web applications using the MERN stack (MongoDB,
+            Express.js, React.js, Node.js). Integrated RESTful APIs, enhanced
+            UI/UX performance, and deployed projects via Git and cloud
+            platforms, delivering scalable and client-focused solutions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MERN Projects -->
+    <section id="mern-projects" style="padding: 60px 20px; text-align: center">
+      <h2 style="color: #00ccff">Full Stack & Web Projects</h2>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 30px;
+          gap: 20px;
+        "
+      >
+        <a
+          href="https://cardify-webapp.vercel.app/"
+          target="_blank"
+          class="project-card"
+        >
+          <img src="./cardify.webp" alt="Cardify" />
+          <h3>Cardify</h3>
+        </a>
+        <a
+          href="https://go-swift-client.vercel.app/"
+          target="_blank"
+          class="project-card"
+        >
+          <img src="./go-swift.webp" alt="Go Swift" />
+          <h3>Go Swift</h3>
+        </a>
+        <a
+          href="https://bharat-buy-client.vercel.app/"
+          target="_blank"
+          class="project-card"
+        >
+          <img src="./bharat-buy.jpg" alt="Bharat Buy" />
+          <h3>Bharat Buy</h3>
+        </a>
+        <a
+          href="https://gas-tracker-6xdp.vercel.app/"
+          target="_blank"
+          class="project-card"
+        >
+          <img src="./gas-tracker.webp" alt="Gas Tracker" />
+          <h3>Gas Tracker</h3>
+        </a>
+        <a
+          href="https://night-of-the-undead-client.vercel.app/"
+          target="_blank"
+          class="project-card"
+        >
+          <img src="./zombie.png" alt="Night of the Undead" />
+          <h3>Night of the Undead</h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- Data Analyst Projects -->
+    <section id="data-projects" style="padding: 60px 20px; text-align: center">
+      <h2 style="color: #00ccff">Data Analyst Projects</h2>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          margin-top: 30px;
+          gap: 20px;
+        "
+      >
+        <div class="project-card" onclick="openModal('hr')">
+          <img src="./Hr.jpg" alt="HR Analytics" />
+          <h3>HR Analytics</h3>
+        </div>
+        <div class="project-card" onclick="openModal('sales')">
+          <img src="./Sales.webp" alt="Sales Dashboard" />
+          <h3>Sales Dashboard</h3>
+        </div>
+        <div class="project-card" onclick="openModal('sleep')">
+          <img src="./Sleep-cycle.webp" alt="Sleep Cycle" />
+          <h3>Sleep Cycle of Students</h3>
+        </div>
+        <div class="project-card" onclick="openModal('diwali')">
+          <img src="./Diwali-sales.jpg" alt="Diwali Sales Dashboard" />
+          <h3>Diwali Sales Dashboard</h3>
+        </div>
+        <div class="project-card" onclick="openModal('medical')">
+          <img src="./Medical.jpg" alt="Medical Dashboard" />
+          <h3>Medical Dashboard</h3>
+        </div>
+        <div class="project-card" onclick="openModal('student')">
+          <img src="./Student.webp" alt="Student Performance" />
+          <h3>Student Performance</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="student" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('student')">&times;</span>
+        <h3>Student Performance</h3>
+        <p><strong>Technical Tools:</strong> Python, Pandas, Matplotlib, Seaborn</p>
+        <p><strong>Aim:</strong> Analyze student data to study the relationship between study habits and performance trends.</p>
+        <p><strong>Output:</strong> Insights into learning behavior and grade patterns.</p>
+      </div>
+    </div>
+
+    <div id="hr" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('hr')">&times;</span>
+        <h3>HR Analytics</h3>
+        <p><strong>Technical Tools:</strong> Power BI, SQL, Excel</p>
+        <p><strong>Aim:</strong> Develop dashboards analyzing employee attrition and performance metrics.</p>
+        <p><strong>Output:</strong> Insights improving employee retention strategy.</p>
+      </div>
+    </div>
+
+    <div id="sales" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('sales')">&times;</span>
+        <h3>Sales Dashboard</h3>
+        <p><strong>Technical Tools:</strong> Power BI, Excel</p>
+        <p><strong>Aim:</strong> Create visual dashboards tracking KPIs and product performance.</p>
+        <p><strong>Output:</strong> Enhanced sales decisions through visual insights.</p>
+      </div>
+    </div>
+
+    <div id="sleep" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('sleep')">&times;</span>
+        <h3>Sleep Cycle of Students</h3>
+        <p><strong>Technical Tools:</strong> Python, Pandas, Seaborn</p>
+        <p><strong>Aim:</strong> Study correlation between sleep hours and student productivity.</p>
+        <p><strong>Output:</strong> Data-backed lifestyle recommendations.</p>
+      </div>
+    </div>
+
+    <div id="diwali" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('diwali')">&times;</span>
+        <h3>Diwali Sales Dashboard</h3>
+        <p><strong>Technical Tools:</strong> Tableau, Excel</p>
+        <p><strong>Aim:</strong> Visualize festival season sales to identify high-performing categories.</p>
+        <p><strong>Output:</strong> Improved campaign planning.</p>
+      </div>
+    </div>
+
+    <div id="medical" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('medical')">&times;</span>
+        <h3>Medical Dashboard</h3>
+        <p><strong>Technical Tools:</strong> Power BI, SQL</p>
+        <p><strong>Aim:</strong> Analyze patient and treatment data for better operational planning.</p>
+        <p><strong>Output:</strong> Improved healthcare decision-making.</p>
+      </div>
+    </div>
+
+    <!-- Resume Section -->
+    <section id="resumes" style="padding: 60px 20px; text-align: center">
+      <h2 style="color: #00ccff">Resumes</h2>
+      <div style="margin-top: 20px">
+        <a href="./MERN stack/Resume_Chandan_Mishra.pdf" download class="button"
+          >Download Full Stack Resume</a
+        >
+        <a
+          href="./Data Analysis/Resume_Chandan_Kumar_Mishra.pdf"
+          download
+          class="button"
+          >Download Data Analyst Resume</a
+        >
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="padding: 60px 20px; text-align: center">
+      <h2 style="color: #00ccff">Contact Me</h2>
+      <form
+        action="https://formspree.io/f/xanjobgp"
+        method="POST"
+        style="
+          max-width: 500px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          text-align: left;
+        "
+      >
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          required
+          style="padding: 10px; border: none; border-radius: 5px"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          required
+          style="padding: 10px; border: none; border-radius: 5px"
+        />
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          required
+          style="padding: 10px; border: none; border-radius: 5px"
+        ></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top: 20px">
+        Or reach me at
+        <a href="mailto:chandankmishra2000@gmail.com" style="color: #00ccff"
+          >chandankmishra2000@gmail.com</a
+        >
+      </p>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background: #0f141a;
+        color: #ccc;
+        text-align: center;
+        padding: 15px;
+      "
+    >
+      <p>&copy; 2025 Chandan Mishra | All</p>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        document.getElementById("navbar").classList.toggle("active");
+      }
+
+      function openModal(id) {
+        document.getElementById(id).style.display = "block";
+      }
+
+      function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+
+      // Close modal if clicked outside content
+      window.onclick = function (event) {
+        const modals = document.querySelectorAll(".modal");
+        modals.forEach((modal) => {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        });
+      };
+    </script>
+  </body>
+</html>
