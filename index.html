@@ -1,17 +1,14 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Chandan Mishra | Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
       /* --- Variables & Core System --- */
       :root {
@@ -24,9 +21,7 @@
         --text-primary: #f8fafc;
         --text-secondary: #94a3b8;
         --text-muted: #64748b;
-        --font-sans:
-          "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, Arial,
-          sans-serif;
+        --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif;
         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
 
@@ -143,8 +138,7 @@
         padding: 4px 0;
       }
 
-      nav a:hover,
-      nav a.active {
+      nav a:hover, nav a.active {
         color: var(--accent);
       }
 
@@ -167,9 +161,7 @@
       }
 
       @media (max-width: 768px) {
-        .hamburger {
-          display: flex;
-        }
+        .hamburger { display: flex; }
         nav {
           position: absolute;
           top: 80px;
@@ -182,9 +174,7 @@
           gap: 24px;
           display: none;
         }
-        nav.active {
-          display: flex;
-        }
+        nav.active { display: flex; }
       }
 
       /* --- Hero UI Section --- */
@@ -263,14 +253,8 @@
       }
 
       @media (max-width: 768px) {
-        .hero-wrapper {
-          flex-direction: column-reverse;
-          text-align: center;
-          gap: 32px;
-        }
-        .hero-content h1 {
-          font-size: 36px;
-        }
+        .hero-wrapper { flex-direction: column-reverse; text-align: center; gap: 32px; }
+        .hero-content h1 { font-size: 36px; }
       }
 
       /* --- Interactive Cards (About, Work, Projects) --- */
@@ -298,8 +282,7 @@
         align-items: stretch;
       }
 
-      .about-main,
-      .about-skills {
+      .about-main, .about-skills {
         padding: 40px;
       }
 
@@ -308,16 +291,10 @@
         margin-bottom: 20px;
       }
 
-      .about-main p:last-child {
-        margin-bottom: 0;
-      }
+      .about-main p:last-child { margin-bottom: 0; }
 
-      .skills-group {
-        margin-bottom: 24px;
-      }
-      .skills-group:last-child {
-        margin-bottom: 0;
-      }
+      .skills-group { margin-bottom: 24px; }
+      .skills-group:last-child { margin-bottom: 0; }
       .skills-group h4 {
         font-size: 14px;
         text-transform: uppercase;
@@ -343,13 +320,8 @@
       }
 
       @media (max-width: 768px) {
-        .about-grid {
-          grid-template-columns: 1fr;
-        }
-        .about-main,
-        .about-skills {
-          padding: 24px;
-        }
+        .about-grid { grid-template-columns: 1fr; }
+        .about-main, .about-skills { padding: 24px; }
       }
 
       /* --- Experience Timeline System --- */
@@ -375,31 +347,19 @@
         gap: 8px;
       }
 
-      .timeline-title h3 {
-        font-size: 18px;
-        font-weight: 600;
-        color: var(--text-primary);
-      }
-      .timeline-title max-span {
-        display: block;
-        font-size: 14px;
-        color: var(--accent);
-        margin-top: 2px;
-      }
+      .timeline-title h3 { font-size: 18px; font-weight: 600; color: var(--text-primary); }
+      .timeline-title max-span { display: block; font-size: 14px; color: var(--accent); margin-top: 2px; }
       .timeline-date {
         font-size: 13px;
         font-weight: 500;
         color: var(--text-muted);
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(255,255,255,0.03);
         padding: 4px 12px;
         border-radius: 6px;
         border: 1px solid var(--border-color);
       }
 
-      .timeline-body {
-        color: var(--text-secondary);
-        font-size: 15px;
-      }
+      .timeline-body { color: var(--text-secondary); font-size: 15px; }
 
       /* --- Portfolio Projects Grid Layout --- */
       .projects-grid {
@@ -497,7 +457,7 @@
         border-radius: 20px;
         padding: 36px;
         position: relative;
-        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 24px 60px rgba(0,0,0,0.5);
         transform: translateY(20px);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
@@ -517,45 +477,16 @@
         line-height: 1;
       }
 
-      .close:hover {
-        color: var(--text-primary);
-      }
+      .close:hover { color: var(--text-primary); }
 
-      .modal-content h3 {
-        font-size: 24px;
-        margin-bottom: 20px;
-        font-weight: 700;
-        color: var(--text-primary);
-      }
-      .modal-meta {
-        margin-bottom: 20px;
-        padding-bottom: 16px;
-        border-bottom: 1px solid var(--border-color);
-      }
-      .modal-meta p {
-        font-size: 14px;
-        color: var(--text-secondary);
-        margin-bottom: 8px;
-      }
-      .modal-meta strong {
-        color: var(--text-primary);
-        font-weight: 500;
-      }
-
-      .modal-body h4 {
-        font-size: 15px;
-        margin-bottom: 6px;
-        color: var(--accent);
-        font-weight: 600;
-      }
-      .modal-body p {
-        color: var(--text-secondary);
-        font-size: 15px;
-        margin-bottom: 20px;
-      }
-      .modal-body p:last-child {
-        margin-bottom: 0;
-      }
+      .modal-content h3 { font-size: 24px; margin-bottom: 20px; font-weight: 700; color: var(--text-primary); }
+      .modal-meta { margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border-color); }
+      .modal-meta p { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; }
+      .modal-meta strong { color: var(--text-primary); font-weight: 500; }
+      
+      .modal-body h4 { font-size: 15px; margin-bottom: 6px; color: var(--accent); font-weight: 600; }
+      .modal-body p { color: var(--text-secondary); font-size: 15px; margin-bottom: 20px; }
+      .modal-body p:last-child { margin-bottom: 0; }
 
       /* --- Professional Action Buttons --- */
       .btn-container {
@@ -615,8 +546,7 @@
         margin-bottom: 20px;
       }
 
-      form input,
-      form textarea {
+      form input, form textarea {
         width: 100%;
         background: rgba(11, 15, 23, 0.6);
         border: 1px solid var(--border-color);
@@ -628,8 +558,7 @@
         transition: var(--transition);
       }
 
-      form input:focus,
-      form textarea:focus {
+      form input:focus, form textarea:focus {
         outline: none;
         border-color: var(--accent);
         background: rgba(11, 15, 23, 0.9);
@@ -658,14 +587,8 @@
         gap: 16px;
       }
 
-      footer a {
-        color: var(--text-secondary);
-        text-decoration: none;
-        transition: var(--transition);
-      }
-      footer a:hover {
-        color: var(--accent);
-      }
+      footer a { color: var(--text-secondary); text-decoration: none; transition: var(--transition); }
+      footer a:hover { color: var(--accent); }
     </style>
   </head>
 
@@ -676,12 +599,8 @@
     <!-- Global App Header Navigation Framework -->
     <header>
       <div class="container">
-        <a href="#home" class="logo">Chandan<span>Mishra</span></a>
-        <button
-          class="hamburger"
-          onclick="toggleMenu()"
-          aria-label="Toggle Navigation"
-        >
+        <a href="#home" class="logo">Chandan<span>.Mishra</span></a>
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation">
           <div></div>
           <div></div>
           <div></div>
@@ -699,41 +618,22 @@
 
     <!-- Main Content Stream Component Viewport -->
     <main class="container">
+      
       <!-- Section: Hero Splash Frame Architecture -->
       <section id="home">
         <div class="hero-wrapper">
           <div class="hero-content">
             <div class="hero-badge">Available for Roles</div>
-            <h1>
-              Transforming Raw Datasets Into <span>Actionable Insights</span>
-            </h1>
-            <p>
-              Hi, I'm Chandan Mishra. A dedicated Data Analyst and Machine
-              Learning enthusiast engine specialist creating robust analytics
-              architecture pipelines, high-performance visual dashboards, and
-              automated predictive intelligence models.
-            </p>
-            <div
-              style="
-                display: flex;
-                gap: 16px;
-                justify-content: flex-start;
-                flex-wrap: wrap;
-              "
-            >
-              <a href="#projects" class="btn btn-primary"
-                >View Analytics Projects</a
-              >
+            <h1>Transforming Raw Datasets Into <span>Actionable Insights</span></h1>
+            <p>Hi, I'm Chandan Mishra. A dedicated Data Analyst and Machine Learning enthusiast engine specialist creating robust analytics architecture pipelines, high-performance visual dashboards, and automated predictive intelligence models.</p>
+            <div style="display: flex; gap: 16px; justify-content: flex-start; flex-wrap: wrap;">
+              <a href="#projects" class="btn btn-primary">View Analytics Projects</a>
               <a href="#contact" class="btn btn-secondary">Let's Connect</a>
             </div>
           </div>
           <div class="hero-avatar-wrapper">
             <div class="avatar-glow"></div>
-            <img
-              src="./Linkedin_profile_Photo.png"
-              alt="Chandan Mishra Headshot Profile Photo"
-              class="hero-avatar"
-            />
+            <img src="./Linkedin_profile_Photo.png" alt="Chandan Mishra Headshot Profile Photo" class="hero-avatar" />
           </div>
         </div>
       </section>
@@ -741,25 +641,12 @@
       <!-- Section: Professional Developer Engine Blueprint -->
       <section id="about">
         <h2 class="section-title">Professional <span>Profile</span></h2>
-        <p class="section-subtitle">
-          A synthesis of analytical precision engineering and structural machine
-          intelligence pipelines.
-        </p>
-
+        <p class="section-subtitle">A synthesis of analytical precision engineering and structural machine intelligence pipelines.</p>
+        
         <div class="about-grid">
           <div class="glass-card about-main">
-            <p>
-              I specialize in dissecting high-volume, structural business
-              datasets, applying sophisticated mathematical cleaning techniques,
-              exploratory analysis (EDA), and deploying predictive modeling
-              workflows using Scikit-Learn.
-            </p>
-            <p>
-              Whether configuring automated reporting architectures inside Power
-              BI, mapping complex structural relational relational logic via SQL
-              engines, or training predictive regressions, I translate ambiguous
-              data ecosystems into executive strategic value assets.
-            </p>
+            <p>I specialize in dissecting high-volume, structural business datasets, applying sophisticated mathematical cleaning techniques, exploratory analysis (EDA), and deploying predictive modeling workflows using Scikit-Learn.</p>
+            <p>Whether configuring automated reporting architectures inside Power BI, mapping complex structural relational relational logic via SQL engines, or training predictive regressions, I translate ambiguous data ecosystems into executive strategic value assets.</p>
           </div>
           <div class="glass-card about-skills">
             <div class="skills-group">
@@ -771,7 +658,7 @@
                 <span class="tag">Data Visualizations</span>
               </div>
             </div>
-            <div class="skills-group" style="margin-top: 24px">
+            <div class="skills-group" style="margin-top: 24px;">
               <h4>Engineering Stack</h4>
               <div class="skills-tags">
                 <span class="tag">Python</span>
@@ -790,10 +677,8 @@
       <!-- Section: Professional Corporate Engagement Engine -->
       <section id="experience">
         <h2 class="section-title">Work <span>Experience</span></h2>
-        <p class="section-subtitle">
-          Proven analytical contributions in structured professional ecosystems.
-        </p>
-
+        <p class="section-subtitle">Proven analytical contributions in structured professional ecosystems.</p>
+        
         <div class="timeline">
           <div class="glass-card timeline-item">
             <div class="timeline-header">
@@ -804,11 +689,7 @@
               <span class="timeline-date">2025 – Present</span>
             </div>
             <div class="timeline-body">
-              Delivering production data metrics processing, algorithmic
-              processing frameworks, and exploratory analysis systems.
-              Engineering custom feature transformations, automated predictive
-              models, and intuitive metric reports for complex business data
-              frameworks.
+              Delivering production data metrics processing, algorithmic processing frameworks, and exploratory analysis systems. Engineering custom feature transformations, automated predictive models, and intuitive metric reports for complex business data frameworks.
             </div>
           </div>
 
@@ -821,12 +702,7 @@
               <span class="timeline-date">9 Months</span>
             </div>
             <div class="timeline-body">
-              Processed structured relational corporate systems data via
-              advanced SQL architectures, Python arrays, and custom Power BI
-              matrix modules. Optimized analytical reporting performance speeds,
-              developed dynamic data visualizations, and directly assisted
-              executive operations teams with calculated corporate intelligence
-              assets.
+              Processed structured relational corporate systems data via advanced SQL architectures, Python arrays, and custom Power BI matrix modules. Optimized analytical reporting performance speeds, developed dynamic data visualizations, and directly assisted executive operations teams with calculated corporate intelligence assets.
             </div>
           </div>
         </div>
@@ -835,222 +711,109 @@
       <!-- Section: Algorithmic Production Projects Dashboard Core -->
       <section id="projects">
         <h2 class="section-title">Selected <span>Projects</span></h2>
-        <p class="section-subtitle">
-          Deep exploration modules highlighting advanced algorithmic modeling,
-          engineering pipelines, and visualization engines.
-        </p>
-
+        <p class="section-subtitle">Deep exploration modules highlighting advanced algorithmic modeling, engineering pipelines, and visualization engines.</p>
+        
         <div class="projects-grid">
           <!-- Card 1 -->
           <div class="glass-card project-card" onclick="openModal('hr')">
-            <div class="project-img-wrapper">
-              <img
-                src="./Hr.jpg"
-                alt="HR Metrics Visual Analytics Dashboard Screenshot"
-              />
-            </div>
+            <div class="project-img-wrapper"><img src="./Hr.jpg" alt="HR Metrics Visual Analytics Dashboard Screenshot" /></div>
             <div class="project-card-content">
               <h3>HR Analytics Dashboard</h3>
-              <p>
-                Operational data mapping interface analyzing structural staff
-                turnover, enterprise metrics vectors, and organizational talent
-                retention factors.
-              </p>
+              <p>Operational data mapping interface analyzing structural staff turnover, enterprise metrics vectors, and organizational talent retention factors.</p>
             </div>
           </div>
           <!-- Card 2 -->
           <div class="glass-card project-card" onclick="openModal('sales')">
-            <div class="project-img-wrapper">
-              <img
-                src="./Sales.webp"
-                alt="Corporate Sales Revenue Processing Engine Screenshot"
-              />
-            </div>
+            <div class="project-img-wrapper"><img src="./Sales.webp" alt="Corporate Sales Revenue Processing Engine Screenshot" /></div>
             <div class="project-card-content">
               <h3>Sales Operations Engine</h3>
-              <p>
-                Dynamic reporting interface mapping enterprise performance
-                parameters, dynamic visual charts, and regional performance
-                trends tracking.
-              </p>
+              <p>Dynamic reporting interface mapping enterprise performance parameters, dynamic visual charts, and regional performance trends tracking.</p>
             </div>
           </div>
           <!-- Card 3 -->
           <div class="glass-card project-card" onclick="openModal('sleep')">
-            <div class="project-img-wrapper">
-              <img
-                src="./Sleep-cycle.webp"
-                alt="Biometric Processing Machine Learning Framework Cover Image"
-              />
-            </div>
+            <div class="project-img-wrapper"><img src="./Sleep-cycle.webp" alt="Biometric Processing Machine Learning Framework Cover Image" /></div>
             <div class="project-card-content">
               <h3>Student Sleep Analytics</h3>
-              <p>
-                Algorithmic Python analytics processing behavioral performance
-                trends, biometric sleep patterns, and predictive machine
-                learning models.
-              </p>
+              <p>Algorithmic Python analytics processing behavioral performance trends, biometric sleep patterns, and predictive machine learning models.</p>
             </div>
           </div>
           <!-- Card 4 -->
           <div class="glass-card project-card" onclick="openModal('diwali')">
-            <div class="project-img-wrapper">
-              <img
-                src="./Diwali-sales.jpg"
-                alt="E-Commerce Visual Sales Trend Optimization Dashboard"
-              />
-            </div>
+            <div class="project-img-wrapper"><img src="./Diwali-sales.jpg" alt="E-Commerce Visual Sales Trend Optimization Dashboard" /></div>
             <div class="project-card-content">
               <h3>Diwali Sales Optimization</h3>
-              <p>
-                Seasonal retail consumer expenditure modeling platform
-                structuring performance trends and high-converting marketing
-                inventory segments.
-              </p>
+              <p>Seasonal retail consumer expenditure modeling platform structuring performance trends and high-converting marketing inventory segments.</p>
             </div>
           </div>
           <!-- Card 5 -->
           <div class="glass-card project-card" onclick="openModal('medical')">
-            <div class="project-img-wrapper">
-              <img
-                src="./Medical.jpg"
-                alt="Clinical Predictive Health System Platform Visual"
-              />
-            </div>
+            <div class="project-img-wrapper"><img src="./Medical.jpg" alt="Clinical Predictive Health System Platform Visual" /></div>
             <div class="project-card-content">
               <h3>Medical Analytics System</h3>
-              <p>
-                Predictive Scikit-Learn data platform integrating hospital
-                operational parameters, clinic logs, and data processing models.
-              </p>
+              <p>Predictive Scikit-Learn data platform integrating hospital operational parameters, clinic logs, and data processing models.</p>
             </div>
           </div>
           <!-- Card 6 -->
           <div class="glass-card project-card" onclick="openModal('student')">
-            <div class="project-img-wrapper">
-              <img
-                src="./Student.webp"
-                alt="Academic Machine Learning Data Regression Tracker Dashboard"
-              />
-            </div>
+            <div class="project-img-wrapper"><img src="./Student.webp" alt="Academic Machine Learning Data Regression Tracker Dashboard" /></div>
             <div class="project-card-content">
               <h3>Academic Performance Vector</h3>
-              <p>
-                Statistical regression modeling processing educational
-                variables, dynamic metrics tracking, and machine learning
-                models.
-              </p>
+              <p>Statistical regression modeling processing educational variables, dynamic metrics tracking, and machine learning models.</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Section: Executive Corporate Career Portals Documentation -->
-      <section id="resumes" style="text-align: center">
+      <section id="resumes" style="text-align: center;">
         <h2 class="section-title">Verified <span>Credentials</span></h2>
-        <p class="section-subtitle">
-          Access optimized resumes tailored to specific industrial operational
-          demands.
-        </p>
+        <p class="section-subtitle">Access optimized resumes tailored to specific industrial operational demands.</p>
         <div class="btn-container">
-          <a
-            href="./Data Analysis/Resume_Chandan_Mishra.pdf"
-            download
-            class="btn btn-primary"
-            >Download Data & ML Resume</a
-          >
-          <a
-            href="./MERN stack/Resume_Chandan_Mishra.pdf"
-            download
-            class="btn btn-secondary"
-            >Download Full Stack Resume</a
-          >
+          <a href="./Data Analysis/Resume_Chandan_Mishra.pdf" download class="btn btn-primary">Download Data & ML Resume</a>
+          <a href="./MERN stack/Resume_Chandan_Mishra.pdf" download class="btn btn-secondary">Download Full Stack Resume</a>
         </div>
       </section>
 
       <!-- Section: Professional Secure Communication Gateway Interface -->
       <section id="contact">
         <h2 class="section-title">Initiate <span>Contact</span></h2>
-        <p class="section-subtitle">
-          Secure communications route for operational roles, project
-          consultations, or technical evaluation inquiries.
-        </p>
-
+        <p class="section-subtitle">Secure communications route for operational roles, project consultations, or technical evaluation inquiries.</p>
+        
         <div class="glass-card contact-wrapper">
           <form action="https://formspree.io/f/xanjobgp" method="POST">
             <div class="form-group">
-              <input
-                type="text"
-                name="name"
-                placeholder="Full Professional Name"
-                required
-              />
+              <input type="text" name="name" placeholder="Full Professional Name" required />
             </div>
             <div class="form-group">
-              <input
-                type="email"
-                name="email"
-                placeholder="Corporate/Direct Email Address"
-                required
-              />
+              <input type="email" name="email" placeholder="Corporate/Direct Email Address" required />
             </div>
             <div class="form-group">
-              <textarea
-                name="message"
-                placeholder="Project Specifications, Scope, or Role Description details..."
-                required
-              ></textarea>
+              <textarea name="message" placeholder="Project Specifications, Scope, or Role Description details..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%">
-              Dispatch Message Matrix
-            </button>
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Dispatch Message Matrix</button>
           </form>
-          <p
-            style="
-              margin-top: 24px;
-              text-align: center;
-              font-size: 14px;
-              color: var(--text-secondary);
-            "
-          >
-            Direct Email Alternative:
-            <a
-              href="mailto:chandankmishra2000@gmail.com"
-              style="color: var(--accent); text-decoration: underline"
-              >chandankmishra2000@gmail.com</a
-            >
+          <p style="margin-top: 24px; text-align: center; font-size: 14px; color: var(--text-secondary);">
+            Direct Email Alternative: <a href="mailto:chandankmishra2000@gmail.com" style="color: var(--accent); text-decoration: underline;">chandankmishra2000@gmail.com</a>
           </p>
         </div>
       </section>
+
     </main>
 
     <!-- Project Modal Framework Subsystems -->
-    <div
-      id="student"
-      class="modal"
-      onclick="handleOutsideClick(event, 'student')"
-    >
+    <div id="student" class="modal" onclick="handleOutsideClick(event, 'student')">
       <div class="modal-content">
         <span class="close" onclick="closeModal('student')">&times;</span>
         <h3>Student Performance</h3>
         <div class="modal-meta">
-          <p>
-            <strong>Technical Stack:</strong> Python, Pandas, Matplotlib,
-            Seaborn, Scikit-learn
-          </p>
+          <p><strong>Technical Stack:</strong> Python, Pandas, Matplotlib, Seaborn, Scikit-learn</p>
         </div>
         <div class="modal-body">
           <h4>Project Aim</h4>
-          <p>
-            Analyze intricate educational records using custom data
-            transformation libraries to explore correlations between active
-            study structures and ultimate performance metrics.
-          </p>
+          <p>Analyze intricate educational records using custom data transformation libraries to explore correlations between active study structures and ultimate performance metrics.</p>
           <h4>Operational Output</h4>
-          <p>
-            Delivered predictive analytics, statistical charts, and structural
-            performance vectors tracking training outcomes.
-          </p>
+          <p>Delivered predictive analytics, statistical charts, and structural performance vectors tracking training outcomes.</p>
         </div>
       </div>
     </div>
@@ -1060,22 +823,13 @@
         <span class="close" onclick="closeModal('hr')">&times;</span>
         <h3>HR Analytics</h3>
         <div class="modal-meta">
-          <p>
-            <strong>Technical Stack:</strong> Power BI, SQL, Microsoft Excel
-          </p>
+          <p><strong>Technical Stack:</strong> Power BI, SQL, Microsoft Excel</p>
         </div>
         <div class="modal-body">
           <h4>Project Aim</h4>
-          <p>
-            Formulate an interactive reporting layout evaluating corporate
-            workspace attrition trends and structural talent turnover
-            indicators.
-          </p>
+          <p>Formulate an interactive reporting layout evaluating corporate workspace attrition trends and structural talent turnover indicators.</p>
           <h4>Operational Output</h4>
-          <p>
-            Constructed executive business intelligence dashboards optimizing
-            active retention planning and talent deployment.
-          </p>
+          <p>Constructed executive business intelligence dashboards optimizing active retention planning and talent deployment.</p>
         </div>
       </div>
     </div>
@@ -1089,16 +843,9 @@
         </div>
         <div class="modal-body">
           <h4>Project Aim</h4>
-          <p>
-            Build enterprise processing systems tracking key performance
-            indicators (KPIs) and operational revenue trends across active
-            products.
-          </p>
+          <p>Build enterprise processing systems tracking key performance indicators (KPIs) and operational revenue trends across active products.</p>
           <h4>Operational Output</h4>
-          <p>
-            Increased real-time visibility into metrics to support strategic,
-            data-driven decisions.
-          </p>
+          <p>Increased real-time visibility into metrics to support strategic, data-driven decisions.</p>
         </div>
       </div>
     </div>
@@ -1108,32 +855,18 @@
         <span class="close" onclick="closeModal('sleep')">&times;</span>
         <h3>Sleep Cycle of Students</h3>
         <div class="modal-meta">
-          <p>
-            <strong>Technical Stack:</strong> Python, Pandas, Seaborn,
-            Scikit-learn
-          </p>
+          <p><strong>Technical Stack:</strong> Python, Pandas, Seaborn, Scikit-learn</p>
         </div>
         <div class="modal-body">
           <h4>Project Aim</h4>
-          <p>
-            Train predictive regression analytics evaluating the functional
-            balance between healthy sleep parameters and academic efficiency
-            profiles.
-          </p>
+          <p>Train predictive regression analytics evaluating the functional balance between healthy sleep parameters and academic efficiency profiles.</p>
           <h4>Operational Output</h4>
-          <p>
-            Generated predictive models alongside data-driven behavioral
-            lifestyle frameworks.
-          </p>
+          <p>Generated predictive models alongside data-driven behavioral lifestyle frameworks.</p>
         </div>
       </div>
     </div>
 
-    <div
-      id="diwali"
-      class="modal"
-      onclick="handleOutsideClick(event, 'diwali')"
-    >
+    <div id="diwali" class="modal" onclick="handleOutsideClick(event, 'diwali')">
       <div class="modal-content">
         <span class="close" onclick="closeModal('diwali')">&times;</span>
         <h3>Diwali Sales Dashboard</h3>
@@ -1142,44 +875,25 @@
         </div>
         <div class="modal-body">
           <h4>Project Aim</h4>
-          <p>
-            Structure and clean unstructured festive market datasets to identify
-            consumer transaction trends and inventory clusters.
-          </p>
+          <p>Structure and clean unstructured festive market datasets to identify consumer transaction trends and inventory clusters.</p>
           <h4>Operational Output</h4>
-          <p>
-            Engineered visual customer demographic mapping matrices to optimize
-            seasonal campaign planning.
-          </p>
+          <p>Engineered visual customer demographic mapping matrices to optimize seasonal campaign planning.</p>
         </div>
       </div>
     </div>
 
-    <div
-      id="medical"
-      class="modal"
-      onclick="handleOutsideClick(event, 'medical')"
-    >
+    <div id="medical" class="modal" onclick="handleOutsideClick(event, 'medical')">
       <div class="modal-content">
         <span class="close" onclick="closeModal('medical')">&times;</span>
         <h3>Medical Dashboard</h3>
         <div class="modal-meta">
-          <p>
-            <strong>Technical Stack:</strong> Power BI, SQL, Python,
-            Scikit-learn
-          </p>
+          <p><strong>Technical Stack:</strong> Power BI, SQL, Python, Scikit-learn</p>
         </div>
         <div class="modal-body">
           <h4>Project Aim</h4>
-          <p>
-            Parse anonymized clinical parameters using secure SQL architectures
-            to construct predictive patient tracking frameworks.
-          </p>
+          <p>Parse anonymized clinical parameters using secure SQL architectures to construct predictive patient tracking frameworks.</p>
           <h4>Operational Output</h4>
-          <p>
-            Delivered operational dashboard infrastructure improving scheduling
-            performance metrics and clinical workflow efficiency.
-          </p>
+          <p>Delivered operational dashboard infrastructure improving scheduling performance metrics and clinical workflow efficiency.</p>
         </div>
       </div>
     </div>
@@ -1210,7 +924,7 @@
       function closeModal(id) {
         const modal = document.getElementById(id);
         modal.classList.remove("active");
-        setTimeout(() => (modal.style.display = "none"), 300);
+        setTimeout(() => modal.style.display = "none", 300);
         document.body.style.overflow = "";
       }
 
@@ -1283,22 +997,16 @@
 
       function animate() {
         ctx.clearRect(0, 0, width, height);
-
+        
         // Draw Subtle Grid Matrix Base Lines
         ctx.strokeStyle = "rgba(255, 255, 255, 0.015)";
         ctx.lineWidth = 1;
         const gridGap = 60;
-        for (let x = 0; x < width; x += gridGap) {
-          ctx.beginPath();
-          ctx.moveTo(x, 0);
-          ctx.lineTo(x, height);
-          ctx.stroke();
+        for(let x = 0; x < width; x += gridGap) {
+          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, height); ctx.stroke();
         }
-        for (let y = 0; y < height; y += gridGap) {
-          ctx.beginPath();
-          ctx.moveTo(0, y);
-          ctx.lineTo(width, y);
-          ctx.stroke();
+        for(let y = 0; y < height; y += gridGap) {
+          ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(width, y); ctx.stroke();
         }
 
         // Processing Interactive Vector Array Links
